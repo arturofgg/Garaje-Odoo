@@ -26,5 +26,55 @@
             <field name="value">40</field>
           </record>
 -->
+          <record id="aparcamiento1" model="garaje.aparcamiento">
+            <field name="name">Plaza Mayor</field>
+            <field name="plazas">8</field>
+          </record>
+
+          <record id="aparcamiento2" model="garaje.aparcamiento">
+            <field name="name">Calle Arriba</field>
+            <field name="plazas">10</field>
+          </record>
+
+          <record id="coche1" model="garaje.coche">
+            <field name="name">123ds</field>
+            <field name="modelo">Fiat122</field>
+            <field name="construido">1990-02-10</field>
+            <field name="consumo">11.2</field>
+            <field name="averiado">True</field>
+            <field name="descripcion">Baja gama</field>
+            <field name="aparcamiento_id" ref="aparcamiento1"></field>
+          </record>
+
+          <record id="coche2" model="garaje.coche">
+            <field name="name">0032s</field>
+            <field name="modelo">Peugot23</field>
+            <field name="construido">1997-02-23</field>
+            <field name="consumo">20.2</field>
+            <field name="averiado">False</field>
+            <field name="descripcion">Gama media</field>
+            <field name="aparcamiento_id" ref="aparcamiento1"></field>
+          </record>
+
+          <record id="coche1" model="garaje.coche">
+            <field name="name">12pe</field>
+            <field name="modelo">Jim2</field>
+            <field name="construido">2001-06-12</field>
+            <field name="consumo">20.3</field>
+            <field name="averiado">True</field>
+            <field name="descripcion">Normal</field>
+            <field name="aparcamiento_id" ref="aparcamiento1"></field>
+          </record>
+
+          <record id="coche1" model="garaje.coche">
+            <field name="name">poe30</field>
+            <field name="modelo">Renault</field>
+            <field name="construido">2003-07-18</field>
+            <field name="consumo">10.3</field>
+            <field name="averiado">False</field>
+            <field name="descripcion">Gama media</field>
+            <field name="aparcamiento_id" ref="aparcamiento2"></field>
+          </record>
+
     </data>
 </odoo>
