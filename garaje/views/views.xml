@@ -170,7 +170,7 @@
       <field name="context">{'search_default_group_by_tipo':False}</field>
     </record>
     <!-- Top menu item -->
-    <menuitem name="Garaje" id="garaje.menu_root"/>
+    <menuitem name="Garaje" id="garaje.menu_root" web_icon="garaje,static/description/icon.png"/>
     <!-- menu categories -->
     <menuitem name="Aparcamientos" id="garaje.aparcamiento_menu" parent="garaje.menu_root" action="garaje.aparcamiento_action_window"/>
     <menuitem name="Coches" id="garaje.coche_menu" parent="garaje.menu_root" action="garaje.coche_action_window"/>

@@ -1,0 +1,69 @@
+<odoo>
+    <record id="garaje.aparcamiento_report" model="ir.actions.report">
+        <field name="name">Informe de aparcamiento</field>
+        <field name="model">garaje.aparcamiento</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">garaje.aparcamiento_report_view</field>
+        <field name="report_file">garaje.aparcamiento_report</field>
+        <field name="binding_model_id" ref="model_garaje_aparcamiento"/>
+        <field name="binding_type">report</field>
+    </record>
+
+<template id="aparcamiento_report_view">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="aparcamiento">
+            <t t-call="web.external_layout">
+                <div class='page'>
+                    <h2 t-field='aparcamiento.name'/>
+                    <p>Número de plazas <span t-field="aparcamiento.plazas"/></p>
+                    <h3>Vehículos:</h3>
+                    <!-- <ul>
+                        <t t-foreach="aparcamiento.coche_ids" t-as="coche">
+                            <li>
+                                <span t-field="coche.name"/>
+                            </li>
+                        </t>
+                    </ul> -->
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th>Matrícula</th>
+                                <th>Modelo</th>
+                                <th>Fecha</th>
+                                <th>Años</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="aparcamiento.coche_ids" t-as="coche">
+                                <tr>
+                                    <td>
+                                        <span t-field="coche.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="coche.modelo"/>
+                                    </td>
+                                    <td>    
+                                        <span t-field="coche.construido"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="coche.annos"/>
+                                    </td>
+                                    <td>
+                                        <!-- <span t-field="coche.averiado"/> -->
+                                        <t t-if="coche.averiado">
+                                            <span>Averiado</span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t> 
+        </t> 
+    </t> 
+</template> 
+
+
+</odoo>

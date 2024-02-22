@@ -26,6 +26,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/garaje_aparcamiento_report.xml',
+        'data/garaje_data.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
